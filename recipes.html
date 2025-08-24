@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kurunji Masala | சமயலுக்கு சுவையூட்டும் ரகசியம்!</title>
+  <title>Kurunji Masala | சமையலுக்கு சுவையூட்டும் ரகசியம்!</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <link rel="icon" href="img/Logo1.png" type="image/png">
 
-<style>
-@media (max-width: 900px) {
-  .hero { text-align: center; }
-  .hero img.hero-img { width: 100%; height: auto; }
-  .hero-content h1 { font-size: 2rem; }
-  .hero-content p { font-size: 1rem; }
-  .filter { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 10px; }
-  .recipe-feature { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .recipe-feature .left-image, .recipe-feature .right-details { width: 100%; }
-  .recipe-feature img.main-dish { max-width: 100%; height: auto; }
-  .recipe-feature img.masala-pack { max-width: 60%; height: auto; margin: 10px auto; display: block; }
-  footer .footer-container { display: flex; flex-direction: column; text-align: center; }
-  footer .footer-about, footer .footer-links, footer .footer-contact, footer .footer-social { margin-bottom: 20px; }
-}
-</style>
-
+  <!-- Mobile Responsive CSS -->
+  <style>
+    @media (max-width: 900px) {
+      .hero { text-align: center; }
+      .hero img.hero-img { width: 100%; height: auto; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      .filter { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 10px; }
+      .recipe-feature { display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .recipe-feature .left-image, .recipe-feature .right-details { width: 100%; }
+      .recipe-feature img.main-dish { max-width: 100%; height: auto; }
+      .recipe-feature img.masala-pack { max-width: 60%; height: auto; margin: 10px auto; display: block; }
+      footer .footer-container { display: flex; flex-direction: column; text-align: center; }
+      footer .footer-about, footer .footer-links, footer .footer-contact, footer .footer-social { margin-bottom: 20px; }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -38,26 +38,24 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="products Page1.html">Products</a></li>
-        <li><a href="Recipes.html">Recipes</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="recipes.html" class="active">Recipes</a></li>
         <li><a href="exports.html">Exports</a></li>
-          <li><a href="Publication.html">Publication</a></li>
+        <li><a href="publication.html">Publication</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero Banner -->
-<section class="hero">
-  <img src="img/About us.png" alt="Trisha Meiyal Banneer" class="hero-img" />
-
-  <div class="hero-content">
-    <h1>Recipes</h1>
-    <p>எங்கள் Kurunji Masala உங்கள் சமையலுக்கு இயற்கையான மணமும் சுவையும் சேர்க்கும்.</p>
-    <a href="#products" class="hero-btn">எங்கள் தயாரிப்புகள் பார்க்க</a>
-  </div>
-</section>
-
+  <section class="hero">
+    <img src="img/About us.png" alt="Kurunji Recipes Banner" class="hero-img" />
+    <div class="hero-content">
+      <h1>Recipes</h1>
+      <p>எங்கள் Kurunji Masala உங்கள் சமையலுக்கு இயற்கையான மணமும் சுவையும் சேர்க்கும்.</p>
+      <a href="products.html" class="hero-btn">எங்கள் தயாரிப்புகள் பார்க்க</a>
+    </div>
+  </section>
 
   <!-- Filter Buttons -->
   <div class="filter">
@@ -69,11 +67,11 @@
   <!-- Recipes -->
   <section class="recipe-feature" data-type="veg">
     <div class="left-image">
-      <img src="img/Chana Masala.png" alt="Channa Masala" class="main-dish">
-      <img src="img/Chennamasala.png" alt="Channa Masala Pack" class="masala-pack">
+      <img src="img/Chana Masala.png" alt="Channa Masala Dish" class="main-dish">
+      <img src="img/Chennamasala.png" alt="Kurunji Channa Masala Pack" class="masala-pack">
     </div>
     <div class="right-details">
-      <h2><img src="img/chana icon.png" class="icon"> Channa Masala</h2>
+      <h2><img src="img/chana icon.png" alt="Channa Icon" class="icon"> Channa Masala</h2>
       <p class="info">
         <span class="icon">🔔</span> 2 People &nbsp;&nbsp;
         <span class="icon">⏱️</span> 40 mins
@@ -85,11 +83,11 @@
 
   <section class="recipe-feature" data-type="non-veg">
     <div class="left-image">
-      <img src="img/chicken gravy.png" alt="Chicken Gravy" class="main-dish">
-      <img src="img/Chicken masala.png" alt="Masala Pack" class="masala-pack">
+      <img src="img/chicken gravy.png" alt="Chicken Gravy Dish" class="main-dish">
+      <img src="img/Chicken masala.png" alt="Kurunji Chicken Masala Pack" class="masala-pack">
     </div>
     <div class="right-details">
-      <h2><img src="img/checken gravy icon.png" class="icon"> Chicken Gravy</h2>
+      <h2><img src="img/checken gravy icon.png" alt="Chicken Icon" class="icon"> Chicken Gravy</h2>
       <p class="info">
         <span class="icon">🔔</span> 4 People &nbsp;&nbsp;
         <span class="icon">⏱️</span> 45 mins
@@ -110,25 +108,25 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
-        <p>CreedVirkcham Enterprise<br>Madurai, Tamil Nadu</p>
+        <p>Creed Virkcham Enterprises<br>Madurai, Tamil Nadu</p>
         <p>📞 +91-9786666303<br>✉️ creedvirkcham@gmail.com</p>
       </div>
       <div class="footer-social">
         <h4>Follow Us</h4>
         <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 CreedVirkchamEnterprise | All Rights Reserved.</p>
+      <p>&copy; 2025 Creed Virkcham Enterprises | All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -146,35 +144,30 @@
 
         recipes.forEach(recipe => {
           const type = recipe.getAttribute('data-type');
-          if (filter === 'all' || filter === type) {
-            recipe.style.display = 'flex';
-          } else {
-            recipe.style.display = 'none';
-          }
+          recipe.style.display = (filter === 'all' || filter === type) ? 'flex' : 'none';
         });
       });
     });
   </script>
 
-<script>
-// Mobile menu toggle for recipes.html
-(function(){
-  const btn = document.querySelector('.hamburger');
-  const nav = document.querySelector('nav.main-nav ul');
-  if(btn && nav){
-    btn.addEventListener('click', () => {
-      const open = document.body.classList.toggle('menu-open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      if(document.body.classList.contains('menu-open')){
-        document.body.classList.remove('menu-open');
-        btn.setAttribute('aria-expanded','false');
+  <!-- Mobile Menu Script -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav.main-nav ul');
+      if(btn && nav){
+        btn.addEventListener('click', () => {
+          const open = document.body.classList.toggle('menu-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          if(document.body.classList.contains('menu-open')){
+            document.body.classList.remove('menu-open');
+            btn.setAttribute('aria-expanded','false');
+          }
+        }));
       }
-    }));
-  }
-})();
-</script>
-
+    })();
+  </script>
 </body>
 </html>
