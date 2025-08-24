@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurunji Masala | சமயலுக்கு சுவையூட்டும் ரகசியம்!</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <link rel="icon" href="img/Logo1.png" type="image/png">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="img/Logo2.png" alt="Kurunji Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products Page1.html">Products</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+        <li><a href="exports.html">Exports</a></li>
+          <li><a href="Publication.html">Publication</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+<section class="slider">
+  <div class="slides">
+    <div class="slide" style="background-image: url('img/banner.png');">
+      <div class="slide-content">
+        
+       <h2>சமையலுக்கு சுவையூட்டும் ரகசியம் !</h2>
+      
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('img/background2.jpg');">
+      <div class="slide-content">
+        <h1>Pure Spices, <span>Pure Taste</span></h1>
+        <p>Experience the finest blends crafted with care.</p>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('img/background3.jpg');">
+      <div class="slide-content">
+        <h1>One Taste, Forever in Memory <span>Kurunji Masala</span></h1>
+        <p>Freshly ground, packed with flavour.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <div class="arrows">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots"></div>
+</section>
+
+<style>
+.slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  transition: transform 0.8s ease;
+}
+.slide {
+  min-width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+}
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.slide-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  max-width: 700px;
+}
+.slide-content h1 {
+  font-size: 3rem;
+}
+.slide-content span {
+  color: #ff9800;
+}
+.slide-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.arrows span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color:white;
+  cursor: pointer;
+  z-index: 2;
+  padding: 10px;
+}
+.prev { left: 15px; }
+.next { right: 15px; }
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+.dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dots .active {
+  background: #ff9800;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".slide");
+  const slidesContainer = document.querySelector(".slides");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+  const dotsContainer = document.querySelector(".dots");
+
+  let index = 0;
+  let timer;
+
+  // Create dots dynamically
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      restartAuto();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  function showSlide(n) {
+    index = (n + slides.length) % slides.length;
+    slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+    document.querySelectorAll(".dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  function startAuto() {
+    timer = setInterval(nextSlide, 4000); // 4s interval
+  }
+
+  function stopAuto() {
+    clearInterval(timer);
+  }
+
+  function restartAuto() {
+    stopAuto();
+    startAuto();
+  }
+
+  prev.addEventListener("click", () => {
+    prevSlide();
+    restartAuto();
+  });
+
+  next.addEventListener("click", () => {
+    nextSlide();
+    restartAuto();
+  });
+
+  showSlide(index);
+  startAuto();
+});
+</script>
+
+
+
+  <!-- About Us Section -->
+<section id="about" class="about about-flex">
+  <div class="about-content">
+    <h2>About Us</h2>
+    <p>
+      We are more than just a purveyor of spices and masalas; we celebrate the purity and genuine intent that lies at
+      the heart of every kitchen. The name Kurunji is rooted in ancient tradition where purity signifies truth and our
+      mission is simple yet profound: to bring the finest <em>'thooyamayana'</em> spices and masalas to every Tamil
+      household. With us, every dish becomes a heartfelt experience, bringing families together and creating cherished
+      memories through the joy of cooking.
+    </p>
+    <a href="about.html" class="btn">Know More</a>
+  </div>
+  <div class="about-image">
+    <img src="img/adv2.png" alt="Masala Bowl" />
+  </div>
+</section>
+
+
+  <!-- Veiw Benefit Products -->
+<section class="trending-section">
+  <h1h class="title">View Benefit Products</h1>
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="img/manjal.jpg" alt="Kurunji Turmeric Powder">
+      <img src="img/Turmeric Powder.png" alt="Turmeric Root" class="root">
+    </div>
+
+    <div class="product-info">
+      <h2>Turmeric Powder</h2>
+      <p>
+        The spice known as turmeric may be the most effective nutritional supplement in existence.
+        Many high-quality studies show that turmeric has major benefits for your body and brain.
+        Many of these benefits come from its main active ingredient, curcumin.
+      </p>
+      <a href="Benefit Products.html" class="view-products">VIEW ALL PRODUCTS →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Hottest Recipes -->
+<section class="recipe-section">
+    <h1 class="recipe-title">HOT TEST RECIPES</h1>
+    
+
+    <div class="recipe-container">
+      <div class="left-side">
+        <img src="img/Chana Masala.png" alt="Channa Dish" class="dish-img" />
+        <div class="packet-wrapper">
+          <img src="img/Chennamasala.png" alt="Kurunji Chicken Masala" class="packet-img" />
+        </div>
+        <h2>Chicken Masala</h2>
+        <p>
+          Channa Masala is a popular Indian dish of white chickpeas in a spicy and tangy gravy.
+          In North India, this dish is called ‘chole masala,’ or simply ‘chole’.
+        </p>
+        <div class="buttons">
+          <a href="chicken masala.html" class="btn">VIEW RECIPE →</a>
+          <a href="recipes.html" class="btn">VIEW ALL →</a>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <img src="img/adv1.png" alt="Lady Pointing" class="lady-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- testimonial -->
+   <section class="testimonials-section">
+  <center><h2>Our Testimonial</h2></center>
+  <div class="testimonial-wrapper">
+    <div class="testimonial-container" id="testimonialContainer">
+      <div class="testimonial-card">
+        <p>“Kurunji Masala சுவையும் தரமும் மிகச் சிறந்தது. எங்கள் குடும்பம் முழுவதும் விரும்புகிறது.”</p>
+        <div class="author">
+          <img src="img/rekha.png" alt="Mrs.Rekha">
+          <h4>திருமதி.ரேகா<br><span>மதுரை</span></h4>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>“மசாலா வாசனை அற்புதம், சுவை மிகச் சிறந்தது. நிச்சயம் பரிந்துரைக்கிறேன்.”</p>
+        <div class="author">
+          <img src="img/Malini.png" alt="kamalahassan">
+          <h4>திருமதி.மாலினி<br><span>கோயம்புத்தூர்</span></h4>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>“தூள் தரம் உயர்ந்தது, எல்லா வகை உணவுகளுக்கும் சரியாக பொருந்தும்.”</p>
+        <div class="author">
+          <img src="img/Arthi.png" alt="vijay">
+          <h4>திருமதி.ஆர்த்தி<br><span>சேலம்</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Products -->
+<section class="recipe-section">
+  <h1 class="recipe-title">Our Products</h1>
+
+  <div class="product-container">
+    <a href="product-turmeric.html" class="product-card">
+      <img src="img/Turmeric Powder.png" alt="Turmeric Powder">
+      <h3>Turmeric Powder</h3>
+      <p>Pure and aromatic turmeric for your daily cooking.</p>
+    </a>
+
+    <a href="product-chilli.html" class="product-card">
+      <img src="img/Chilli Powder.png" alt="Chilli Powder">
+      <h3>Chilli Powder</h3>
+      <p>Finely ground spicy red chilli for rich color and taste.</p>
+    </a>
+
+    <a href="product-coriander.html" class="product-card">
+      <img src="img/Coriender Powder.png" alt="Coriander Powder">
+      <h3>Coriander Powder</h3>
+      <p>Flavorful coriander with natural aroma and freshness.</p>
+    </a>
+
+    <a href="product-garam.html" class="product-card">
+      <img src="img/garammasala.png" alt="Garam Masala">
+      <h3>Garam Masala</h3>
+      <p>Traditional blend of Indian spices for rich dishes.</p>
+    </a>
+  </div>
+</section>
+
+<!-- whatsapp -->
+  <a href="https://wa.me/919786666303" class="whatsapp-button" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+  <span>Chat with us</span>
+</a>
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>Kurunji Masala</h3>
+      <p>Traditional taste, premium quality. Bringing you the essence of home-cooked flavor.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>CreedVirkcham Enterprise<br>Madurai, Tamil Nadu</p>
+      <p>📞 +91-9786666303<br>✉️ creedvirkcham@gmail.com</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CreedVirkchamEnterprise | All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
