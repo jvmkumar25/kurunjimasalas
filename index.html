@@ -6,15 +6,18 @@
   <title>Kurunji Masala | சமயலுக்கு சுவையூட்டும் ரகசியம்!</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
-  <link rel="icon" href="img/Logo1.png" type="image/png">
+  <link rel="icon" href="img/logo/Logo1.png" type="image/png">
 </head>
 <body>
   <!-- Header -->
   <header>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="logo">
-      <img src="img/Logo2.png" alt="Kurunji Logo" />
+      <img src="img/logo/Logo2.png" alt="Kurunji Logo" />
     </div>
-    <nav>
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -30,20 +33,20 @@
   <!-- Hero Banner -->
 <section class="slider">
   <div class="slides">
-    <div class="slide" style="background-image: url('img/banner.png');">
+    <div class="slide" style="background-image: url('img/picture/banner.png');">
       <div class="slide-content">
         
        <h2>சமையலுக்கு சுவையூட்டும் ரகசியம் !</h2>
       
       </div>
     </div>
-    <div class="slide" style="background-image: url('img/background2.jpg');">
+    <div class="slide" style="background-image: url('img/picture/background2.jpg');">
       <div class="slide-content">
         <h1>Pure Spices, <span>Pure Taste</span></h1>
         <p>Experience the finest blends crafted with care.</p>
       </div>
     </div>
-    <div class="slide" style="background-image: url('img/background3.jpg');">
+    <div class="slide" style="background-image: url('img/picture/background3.jpg');">
       <div class="slide-content">
         <h1>One Taste, Forever in Memory <span>Kurunji Masala</span></h1>
         <p>Freshly ground, packed with flavour.</p>
@@ -136,6 +139,15 @@
 .dots .active {
   background: #ff9800;
 }
+
+@media (max-width: 900px) {
+  .slider { height: 60vh; }
+  .slide { height: 60vh; }
+  .slide-content h1, .slide-content h2 { font-size: 2rem; }
+  .slide-content p { font-size: 1rem; }
+  .arrows span { font-size: 1.6rem; padding: 6px; }
+}
+
 </style>
 
 <script>
@@ -219,19 +231,19 @@ document.addEventListener("DOMContentLoaded", function () {
     <a href="about.html" class="btn">Know More</a>
   </div>
   <div class="about-image">
-    <img src="img/adv2.png" alt="Masala Bowl" />
+    <img src="img/picture/adv2.png" alt="Masala Bowl" />
   </div>
 </section>
 
 
   <!-- Veiw Benefit Products -->
 <section class="trending-section">
-  <h1h class="title">View Benefit Products</h1>
+  <h1 class="title">View Benefit Products</h1>
 
   <div class="product-container">
     <div class="product-image">
-      <img src="img/manjal.jpg" alt="Kurunji Turmeric Powder">
-      <img src="img/Turmeric Powder.png" alt="Turmeric Root" class="root">
+      <img src="img/Products/manjal.jpg" alt="Kurunji Turmeric Powder">
+      <img src="img/Products/Turmeric Powder.png" alt="Turmeric Root" class="root">
     </div>
 
     <div class="product-info">
@@ -253,9 +265,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="recipe-container">
       <div class="left-side">
-        <img src="img/Chana Masala.png" alt="Channa Dish" class="dish-img" />
+        <img src="img/cook/Chana Masala.png" alt="Channa Dish" class="dish-img" />
         <div class="packet-wrapper">
-          <img src="img/Chennamasala.png" alt="Kurunji Chicken Masala" class="packet-img" />
+          <img src="img/Products/Chennamasala.png" alt="Kurunji Chicken Masala" class="packet-img" />
         </div>
         <h2>Chicken Masala</h2>
         <p>
@@ -269,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <div class="right-side">
-        <img src="img/adv1.png" alt="Lady Pointing" class="lady-img" />
+        <img src="img/picture/adv1.png" alt="Lady Pointing" class="lady-img" />
       </div>
     </div>
   </section>
@@ -282,21 +294,21 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="testimonial-card">
         <p>“Kurunji Masala சுவையும் தரமும் மிகச் சிறந்தது. எங்கள் குடும்பம் முழுவதும் விரும்புகிறது.”</p>
         <div class="author">
-          <img src="img/rekha.png" alt="Mrs.Rekha">
+          <img src="img2/rekha.png" alt="Mrs.Rekha">
           <h4>திருமதி.ரேகா<br><span>மதுரை</span></h4>
         </div>
       </div>
       <div class="testimonial-card">
         <p>“மசாலா வாசனை அற்புதம், சுவை மிகச் சிறந்தது. நிச்சயம் பரிந்துரைக்கிறேன்.”</p>
         <div class="author">
-          <img src="img/Malini.png" alt="kamalahassan">
+          <img src="img/picture/Malini.png" alt="kamalahassan">
           <h4>திருமதி.மாலினி<br><span>கோயம்புத்தூர்</span></h4>
         </div>
       </div>
       <div class="testimonial-card">
         <p>“தூள் தரம் உயர்ந்தது, எல்லா வகை உணவுகளுக்கும் சரியாக பொருந்தும்.”</p>
         <div class="author">
-          <img src="img/Arthi.png" alt="vijay">
+          <img src="img/picture/Arthi.png" alt="vijay">
           <h4>திருமதி.ஆர்த்தி<br><span>சேலம்</span></h4>
         </div>
       </div>
@@ -310,25 +322,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="product-container">
     <a href="product-turmeric.html" class="product-card">
-      <img src="img/Turmeric Powder.png" alt="Turmeric Powder">
+      <img src="img/Products/Turmeric Powder.png" alt="Turmeric Powder">
       <h3>Turmeric Powder</h3>
       <p>Pure and aromatic turmeric for your daily cooking.</p>
     </a>
 
     <a href="product-chilli.html" class="product-card">
-      <img src="img/Chilli Powder.png" alt="Chilli Powder">
+      <img src="img/Products/Chilli Powder.png" alt="Chilli Powder">
       <h3>Chilli Powder</h3>
       <p>Finely ground spicy red chilli for rich color and taste.</p>
     </a>
 
     <a href="product-coriander.html" class="product-card">
-      <img src="img/Coriender Powder.png" alt="Coriander Powder">
+      <img src="img/Products/Coriender Powder.png" alt="Coriander Powder">
       <h3>Coriander Powder</h3>
       <p>Flavorful coriander with natural aroma and freshness.</p>
     </a>
 
     <a href="product-garam.html" class="product-card">
-      <img src="img/garammasala.png" alt="Garam Masala">
+      <img src="img/Products/garammasala.png" alt="Garam Masala">
       <h3>Garam Masala</h3>
       <p>Traditional blend of Indian spices for rich dishes.</p>
     </a>
@@ -366,14 +378,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="footer-social">
       <h4>Follow Us</h4>
-      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
-      <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+      <a href="#"><img src="img/logo/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/logo/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="img/logo/youtube.png" alt="YouTube"></a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2025 CreedVirkchamEnterprise | All Rights Reserved.</p>
   </div>
 </footer>
+
+<script>
+// Mobile menu toggle
+(function(){
+  const btn = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav.main-nav ul');
+  if(btn && nav){
+    btn.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close menu when clicking a link (mobile)
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if(document.body.classList.contains('menu-open')){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    }));
+  }
+})();
+</script>
+
 </body>
 </html>
