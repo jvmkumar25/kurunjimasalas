@@ -1270,3 +1270,89 @@ body {
 
 
   
+
+/* Responsive Header & Mobile Menu */
+.hamburger {
+  display: none;
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 1100;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 6px auto;
+  background: var(--brand-purple, rgb(57, 3, 57));
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* Desktop nav stays as-is */
+.main-nav ul {
+  list-style: none;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  header {
+    padding: 12px 16px;
+  }
+  .logo img {
+    height: 48px;
+  }
+  .hamburger { display: inline-block; }
+  /* Hide desktop menu on mobile */
+  .main-nav ul {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 80px; /* below header */
+    background: #ffffff;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 18px 20px;
+    border-top: 1px solid #eee;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    z-index: 1050;
+  }
+  body.menu-open .main-nav ul {
+    display: flex;
+  }
+  .main-nav ul li a {
+    display: block;
+    padding: 10px 8px;
+    border-radius: 6px;
+  }
+  /* Turn body background-attachment to scroll on mobile to avoid jank */
+  body {
+    background-attachment: scroll;
+    padding-top: 80px; /* slightly smaller on mobile */
+  }
+}
+
+/* Make 'about-image' not overflow on mobile */
+@media (max-width: 900px) {
+  .about-image img {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+/* Tune grids & sections for small screens */
+@media (max-width: 600px) {
+  .recipe-title,
+  .testimonials-section h2 {
+    font-size: 34px;
+  }
+  .left-side p { font-size: 16px; }
+  .buttons { gap: 12px; }
+}
