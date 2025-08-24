@@ -7,14 +7,32 @@
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
   <link rel="icon" href="img/Logo1.png" type="image/png">
+
+<style>
+@media (max-width: 900px) {
+  .hero { text-align: center; }
+  .hero img.hero-img { width: 100%; height: auto; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1rem; }
+  section#about div[style*="display: flex"] { flex-direction: column !important; text-align: center; }
+  section#about img { max-width: 100%; height: auto; }
+  section#vision-mission div[style*="display: flex"] { flex-direction: column !important; }
+  footer .footer-container { display: flex; flex-direction: column; text-align: center; }
+  footer .footer-about, footer .footer-links, footer .footer-contact, footer .footer-social { margin-bottom: 20px; }
+}
+</style>
+
 </head>
 <body>
   <!-- Header -->
   <header>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="logo">
       <img src="img/Logo2.png" alt="Kurunji Logo" />
     </div>
-    <nav>
+    <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -162,8 +180,28 @@ From its inception,<strong> quality</strong> has been the guiding principle of K
 
 
   
+
+<script>
+// Mobile menu toggle for about.html
+(function(){
+  const btn = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav.main-nav ul');
+  if(btn && nav){
+    btn.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if(document.body.classList.contains('menu-open')){
+        document.body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    }));
+  }
+})();
+</script>
+
 </body>
 </html>
-
 
 
